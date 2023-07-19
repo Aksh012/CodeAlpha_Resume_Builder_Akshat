@@ -1,0 +1,30 @@
+h3{
+    text-transform: uppercase;
+}
+
+span{
+    color: red;
+}
+
+
+
+.skls{
+    list-style: none;
+}
+
+.background{
+    background-color: lightblue;
+}
+
+.background2{
+    background-color: whitesmoke;
+}
+
+#resume-temp {
+    display: none;
+}
+
+#resume-form {
+    display: block;
+}
+    

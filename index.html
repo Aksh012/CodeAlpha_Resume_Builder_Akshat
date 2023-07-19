@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/aos.css">
+        <link rel="stylesheet" href="/css/line-awesome.min.css">
+    <title>Resume Builder</title>
+</head>
+<body>
+<!-- ---------------------Resume-form-------------------- -->
+    <div class="container" id="resume-forme">
+        <h1 class="text-center my-2">Resume Builder</h1>
+        <p class="text-center">Here you can make you resume for free </p>
+    </div>
+
+    <div class="container mb-5" id="resume-form">
+        <div class="row">
+            <!-- -----------presonal info-------------- -->
+            <div class="col-md-6 mt-2">
+                <h3 class="mt-2">Personal Info</h3>
+
+                <div class="form-group">
+                    <label for="NameField">Enter Your Full Name <span>*</span></label>
+                    <input type="text" id="NameField" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="gmailField">Enter Your Gmail <span>*</span></label>
+                    <input type="email" id="gmailField" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="contactField">Enter Your Contact Number<span>*</span> </label>
+                    <input type="text" id="contactField" class="form-control">
+                </div>
+                <!-- -------------------address----------------- -->
+                <div class="form-group">
+                    <label for="AddressField">Address<span>*</span></label>
+                    <textarea rows="5" id="AddressField" class="form-control"></textarea>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="cityField">City<span>*</span> </label>
+                            <input type="text" id="cityField" class="form-control">
+                        </div>
+                    </div>
+    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="stateField">State<span>*</span> </label>
+                            <input type="text" id="stateField" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="stateField">Zip Code/AreaPin Code<span>*</span> </label>
+                            <input type="text" id="zipField" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ------------------------social link--------------------- -->
+                <h3 class="mt-2">Social Media Links</h3>
+
+                <div class="form-group">
+                    <label for="linkedinField">LinkedIn</label>
+                    <input type="text" id="linkedinField" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="instagramField">Instagram</label>
+                    <input type="text" id="instagramField" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="githubField">Git Hub</label>
+                    <input type="text" id="githubField" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="youtubeField">YouTube</label>
+                    <input type="text" id="youtubeField" class="form-control">
+                </div>
+
+            </div>
+            <!-- -------------------------Education-------------------- -->
+            <div class="col-md-6 mt-2">
+                <h3 class="mt-2">Education</h3>
+
+                <div class="form-group" id="eDu">
+                    <label for="">Education<span>*</span></label>
+                    <input type="text" class="form-control eField">
+                    <div class="container-fulid" id="eduBtn">
+                        <button onclick="addNewEduField()" class="btn btn-dark btn-sm mt-2">Add more</button>
+                    </div>
+                </div>
+                
+                <!-- -------------------Experience----------------- -->
+                <h3 class="mt-2">Experience</h3>
+
+                <div class="form-group" id="exp">
+                    <label for="">Experience<span></span></label>
+                    <input type="text" placeholder="Student/Freshe can ignore this" class="form-control expField">
+                    <button onclick="addNewExpField()" class="btn btn-dark btn-sm mt-2" id="expbtn">Add more</button>
+                </div>
+                
+                <!-- ---------------Skills--------------- -->
+                <h3 class="mt-2">Skills</h3>
+
+                <div class="form-group" id="Skills">
+                    <label for="">Skills<span>*</span></label>
+                    <input type="text" class="form-control SkillsField">
+                    <button onclick="addNewSkillsField()" class="btn btn-dark btn-sm mt-2" id="skillsbtn">Add more</button>
+                </div>
+                
+                <!-- ---------------------projects--------------- -->
+                <h3 class="mt-2">Projects</h3>
+
+                <div class="form-group" id="prj">
+                    <label for="">Name Of Project<span>*</span></label>
+                    <input type="text" class="form-control projectField">
+                    <button onclick="addNewProjectField()" class="btn btn-dark btn-sm mt-2" id="projectbtn">Add more</button>
+                    
+                </div>
+                                                                            
+                <!-- -------------------------Achivements--------------------- -->
+                <h3 class="mt-2">Achivements</h3>
+
+                <div class="form-group" id="achiv">
+                    <label for="">Achivements<span>*</span></label>
+                    <input type="text" class="form-control AchiveField">
+                    <button onclick="addNewAchivField()" class="btn btn-dark btn-sm mt-2" id="achivebtn">Add more</button>
+                </div>
+                
+
+            </div>
+
+        </div>
+
+        <div class="container text-center mt-3">
+            <div onclick="buildResume()" class="btn btn-primary bt-lg">Build Resume</div>
+        </div>
+    </div>
+    
+<!-- --------------------------Resume template ------------------>
+    <div class="container" id="resume-temp">
+
+        <div class="row">
+            <div class="col-md-9 background2">
+                <!-- -----------------heading----------------- -->
+                <div class="container mt-3">
+                    <h1 style="font-weight: 850;" id="nameT">Akshat</h1>
+                </div>
+                <div class="container education mt-5">
+                    <h4 class="background">Education</h4>
+
+                    <ul id="eduT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rerum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos deserunt ratione optio neque asperiores tempora amet vel officia consectetur laudantium.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rerum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos deserunt ratione optio neque asperiores tempora amet vel officia consectetur laudantium</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rerum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos deserunt ratione optio neque asperiores tempora amet vel officia consectetur laudantium</li>
+                    </ul>
+                </div>
+
+                <div class="container experience mt-2">
+                    <h4 class="background">Experience</h4>
+
+                    <ul id="expT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rerum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos deserunt ratione optio neque asperiores tempora amet vel officia consectetur laudantium.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rerum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos deserunt ratione optio neque asperiores tempora amet vel officia consectetur laudantium</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rerum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos deserunt ratione optio neque asperiores tempora amet vel officia consectetur laudantium</li>
+                    </ul>
+                </div>
+
+                <div class="container Project mt-2">
+                    <h4 class="background">Projects</h4>
+
+                    <ul id="projectT">
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus quia id fugiat assumenda dolor! Corrupti ullam sed inventore accusantium expedita</li>
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus quia id fugiat assumenda dolor! Corrupti ullam sed inventore accusantium expedita </li>
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus quia id fugiat assumenda dolor! Corrupti ullam sed inventore accusantium expedita</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-3 background">
+
+                <div class="container mt-3">
+
+                    <div class="address">
+                        <ul class="skls">
+                            <li ><h6 id="addressT">h-87 sadk sadjl</h6></li>
+                            <li> <h6 id="cityT">haridwar,</h6><h6 id="stateT">uttarakhand,</h6> <h6 id="zipT">(249403)</h6></li>
+                            <li ><h6 id="gmailT">abc@gmail.com</h6></li>
+                            <li > <h6 id="contactT">9876543210</h6></li>
+                        </ul>
+                    </div>
+
+                    <div class="skills  mt-3">
+                        <h4 class="">SKILLS</h4>
+                        <ul class="skls" id="skillsT">
+                            <li>HTML</li>
+                            <li>HTML5</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
+
+                    <div class="Achivements mt-2">
+                        <h4>Achivements</h4>
+                        <ul id="achiveT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rerum! Lorem ipsum dolor sit amet, consectetur </li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rerum! Lorem ipsum dolor sit amet, consectetur </li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rerum! Lorem ipsum dolor sit amet, consectetur </li>
+                        </ul>
+                    </div>
+
+                    <div class="links">
+                        <h4>Links</h4>
+                        <ul>
+                            <p><a id="gitT" href="#1">www.github.com/abc</a></p>
+                            <p><a id="linkedT" href="#1">www.linkedin.com/abc</a></p>
+                            <p><a id="instaT" href="#1">www.instagram.com/abc</a></p>
+                            <p><a id="ytT" href="#1">www.youtube.com/abc</a></p>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="download text-center my-3">
+            <button onclick="download()" class="btn btn-lg background">Download/Print</button>
+        </div>
+
+    </div>
+
+    
+    <script src="/js/script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
